@@ -1,0 +1,52 @@
+﻿<Window x:Class="ContentsControls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContentsControls"
+        mc:Ignorable="d" FontSize="30"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid >
+        <Grid.Resources>
+            
+            <Style x:Key="test" TargetType="{x:Type local:SimplePropertyRowContentControl}">
+                <Setter Property="PropertyTitle" Value="Blue"/>
+                <Setter Property="TitleWidth" Value="1*"/>
+                <Setter Property="ContentWidth" Value="1*"/>
+            </Style>
+        </Grid.Resources>
+        <ItemsControl ItemContainerStyle="{StaticResource test}" Grid.Row="3" BorderBrush="Black" BorderThickness="3" Grid.ColumnSpan="3" Grid.RowSpan="2"  Focusable="False">
+            <local:SimplePropertyRowContentControl PropertyTitle="Property Name 1" >  
+                <Button Content="Button 1"/>
+            </local:SimplePropertyRowContentControl>  
+            <local:SimplePropertyRowContentControl   PropertyTitle="Property Name 2">
+                <TextBox Text="Test 1"/>
+            </local:SimplePropertyRowContentControl>
+            <local:SimplePropertyRowContentControl   PropertyTitle="Property Name 3">
+                <TextBox Text="Test 321"/>
+            </local:SimplePropertyRowContentControl>
+            <local:SimplePropertyRowContentControl PropertyTitle="Property Name 4">
+                <Button Content="Button"/>
+            </local:SimplePropertyRowContentControl>  
+            <local:SimplePropertyRowContentControl PropertyTitle="werwerw">
+                <Button Content="Button"/>
+            </local:SimplePropertyRowContentControl>
+            <local:SimplePropertyRowContentControl PropertyTitle="werwerw">
+                <local:SimplePropertyRowContentControl.TitleContent>
+                    <ComboBox Width="100">
+                        <ComboBoxItem Content="Test1"/>
+                        <ComboBoxItem Content="Test2"/>
+                    </ComboBox>
+                </local:SimplePropertyRowContentControl.TitleContent>
+                <Button Content="Button"/>
+            </local:SimplePropertyRowContentControl>
+            
+            <local:SimplePropertyRowContentControl PropertyTitle="werwerw">
+                <local:SimplePropertyRowContentControl.TitleContent>
+                    <Button>Click me</Button>
+                </local:SimplePropertyRowContentControl.TitleContent>
+                <Button Content="Button"/>
+            </local:SimplePropertyRowContentControl>
+        </ItemsControl>
+    </Grid>
+</Window>
